@@ -193,9 +193,9 @@ def load_data(testset_size):
     print(labels_gecko[:1], labels_baby[:1], labels_spider[:1], labels_noise[:1])
     print(len(labels_gecko), len(labels_baby), len(labels_spider), len(labels_noise))
     # print(len(labels_gecko[0]))
-    X = images_gecko[:1000] + images_baby[:1000] + images_spider[:1000] + images_noise[:3000]
-    y = labels_gecko[:1000] + labels_baby[:1000] + labels_spider[:1000] + labels_noise[:3000]
-    print(len(X))
+    X = images_gecko[:500] + images_baby[:500] + images_spider[:500] + images_noise[:1500]
+    y = labels_gecko[:500] + labels_baby[:500] + labels_spider[:500] + labels_noise[:1500]
+    
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=testset_size, random_state = 50)
     print(np.mean(y_train))
     lb = MyLabelBinarizer()

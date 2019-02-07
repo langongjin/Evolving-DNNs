@@ -56,7 +56,6 @@ def render_nn(nn, ax=None,
     max_weight = max([c.weight for c in nn.connections])    
     
     # connections
-    print(len(nn.connections))
     for connection in nn.connections:
         n1 = nn.neurons[connection.source_neuron_idx]
         n2 = nn.neurons[connection.target_neuron_idx]
@@ -102,9 +101,8 @@ def render_nn(nn, ax=None,
 
     # neurons
     for index in range(len(nn.neurons)):
-
         n = nn.neurons[index]
-        # print(n)
+
         if is_substrate:
             nx, ny = n.substrate_coords[0], n.substrate_coords[1]
         else:
@@ -178,7 +176,6 @@ def plot_nn(nn, ax=None,
             if AlmostEqual(neuron.split_y, depth, 1.0 / (MAX_DEPTH+1)):
                 neuron.x = rect_x + xxpos + j * (rect_x_size / (8+ neuron_count))
                 j = j + 1
-    print(dept_list)
     # calculate y positions of nodes
     for neuron in nn.neurons:
         base_y = rect_y + neuron.split_y
